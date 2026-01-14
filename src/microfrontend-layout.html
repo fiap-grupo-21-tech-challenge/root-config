@@ -1,39 +1,37 @@
 <single-spa-router>
-  <!--
-
-    This is the single-spa Layout Definition for your microfrontends.
-    See https://single-spa.js.org/docs/layout-definition/ for more information.
-
-  -->
-
-  <!-- Example layouts you might find helpful:
-
-  <nav>
-    <application name="@org/navbar"></application>
-  </nav>
-  <route path="settings">
-    <application name="@org/settings"></application>
-  </route>
-
-  -->
-
   <main>
-    <route path="/" exact>
+
+    <route path="/">
       <application name="@grupo21/navbar"></application>
       <application name="@grupo21/landing-page"></application>
     </route>
 
-    <route path="/dashboard" exact>
+    <route path="/sign-in">
+      <application name="@grupo21/navbar"></application>
+      <application name="@grupo21/sign-in"></application>
+    </route>
+
+    <route path="/sign-up">
+      <application name="@grupo21/navbar"></application>
+      <application name="@grupo21/sign-up"></application>
+    </route>
+
+    <route path="/balance">
       <application name="@grupo21/navbar"></application>
       <application name="@grupo21/balance"></application>
     </route>
 
-    <route path="/sign-in" exact>
-      <application name="@grupo21/sign-in"></application>
+    <route path="/transactions">
+      <application name="@grupo21/navbar"></application>
+      <application name="@grupo21/transactions"></application>
     </route>
 
-    <route path="/sign-up" exact>
-      <application name="@grupo21/sign-up"></application>
+    <route default>
+      <application name="@grupo21/navbar"></application>
+      <section style="padding: 2rem">
+        <h2>Página não encontrada</h2>
+      </section>
     </route>
+
   </main>
 </single-spa-router>
