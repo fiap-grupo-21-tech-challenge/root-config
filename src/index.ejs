@@ -33,24 +33,37 @@
 
   <% if (isLocal) { %>
     <script type="injector-importmap">
-    {
-      "imports": {
-        "@grupo21/root-config": "//localhost:9000/grupo21-root-config.js",
-        "@grupo21/shared-react": "//localhost:8080/grupo21-shared-react.js",
-        "@grupo21/navbar": "//localhost:8081/grupo21-navbar.js",
-        "@grupo21/landing-page": "//localhost:8082/grupo21-landing-page.js",
-        "@grupo21/sign-in": "//localhost:8083/grupo21-sign-in.js",
-        "@grupo21/sign-up": "//localhost:8084/grupo21-sign-up.js",
-        "@grupo21/balance": "//localhost:8085/grupo21-balance.js",
-        "@grupo21/transactions": "//localhost:8086/grupo21-transactions.js"
+      {
+        "imports": {
+          "@grupo21/root-config": "//localhost:9000/grupo21-root-config.js",
+          "@grupo21/shared-react": "//localhost:8080/grupo21-shared-react.js",
+          "@grupo21/navbar": "//localhost:8081/grupo21-navbar.js",
+          "@grupo21/landing-page": "//localhost:8082/grupo21-landing-page.js",
+          "@grupo21/sign-in": "//localhost:8083/grupo21-sign-in.js",
+          "@grupo21/sign-up": "//localhost:8084/grupo21-sign-up.js",
+          "@grupo21/balance": "//localhost:8085/grupo21-balance.js"
+        }
       }
-    }
-  </script>
-    <% } %>
+    </script>
+    <% } else { %>
+      <script type="injector-importmap">
+      {
+        "imports": {
+          "@grupo21/root-config": "https://d1vqzf4765g06r.cloudfront.net/grupo21-root-config.js",
+          "@grupo21/shared-react": "https://d1965g13alja9e.cloudfront.net/grupo21-shared-react.js",
+          "@grupo21/navbar": "https://dk362jk66ny4f.cloudfront.net/grupo21-navbar.js",
+          "@grupo21/landing-page": "https://d32j27cemumwy2.cloudfront.net/grupo21-landing-page.js",
+          "@grupo21/sign-in": "https://d188b0yyrw5i4.cloudfront.net/grupo21-sign-in.js",
+          "@grupo21/sign-up": "https://deupa58ouid5b.cloudfront.net/grupo21-sign-up.js",
+          "@grupo21/balance": "https://d2utn758tdlih3.cloudfront.net/grupo21-balance.js"
+        }
+      }
+    </script>
+      <% } %>
 
-      <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@5.1.1/dist/import-map-overrides.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/@single-spa/import-map-injector@2.0.1/lib/import-map-injector.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@5.1.1/dist/import-map-overrides.js"></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/@single-spa/import-map-injector@2.0.1/lib/import-map-injector.js"></script>
 </head>
 
 <body>
