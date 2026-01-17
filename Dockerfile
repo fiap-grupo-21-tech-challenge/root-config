@@ -1,19 +1,24 @@
-FROM node:20-alpine
+# Use uma imagem Node.js como base
+FROM node:lts-alpine
 
-# Instala o servidor e as dependências de build
-RUN npm install -g serve
-
+# Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia os arquivos de configuração primeiro (otimiza cache)
-COPY package*.json ./
+# Copia os arquivos do projeto para o diretório de trabalho
+COPY package.json package-lock.json ./
+# Ou: COPY package.json yarn.lock ./
+
+# Instala as dependências do projeto
 RUN npm install
+# Ou: RUN yarn install
 
-# Copia o resto do código e gera o build
+# Copia o restante do código fonte
 COPY . .
-RUN npm run build
 
-# O Webpack vai gerar uma pasta chamada 'dist'
-# Vamos servir o que estiver dentro dela na porta 9000
+# Expõe a porta que o servidor de desenvolvimento do root config usa (geralmente 9000)
 EXPOSE 9000
-CMD ["serve", "-s", "dist", "-l", "9000"]
+
+# Comando para iniciar o servidor de desenvolvimento
+# O --host 0.0.0.0 é crucial para que o servidor seja acessível de fora do container
+CMD ["npm", "start"]
+# Ou: CMD ["yarn", "start"]

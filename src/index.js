@@ -9,13 +9,13 @@ registerApplication({
 registerApplication({
   name: '@grupo21/navbar',
   app: () => System.import('@grupo21/navbar'),
-  activeWhen: ['/']
+  activeWhen: ['/navbar']
 });
 
 registerApplication({
   name: '@grupo21/landing-page',
   app: () => System.import('@grupo21/landing-page'),
-  activeWhen: ['/']
+  activeWhen: ['/landing-page']
 });
 
 registerApplication({
@@ -37,9 +37,9 @@ registerApplication({
 });
 
 registerApplication({
-  name: '@grupo21/transactions',
-  app: () => System.import('@grupo21/transactions'),
-  activeWhen: ['/transactions']
+  name: '@grupo21/upload-files',
+  app: () => System.import('@grupo21/upload-files'),
+  activeWhen: ['/upload-files']
 });
 
 start();
