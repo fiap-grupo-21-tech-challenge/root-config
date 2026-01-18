@@ -39,6 +39,17 @@
   padding: 8px 16px;
 }
 
+.button-red {
+  color: var(--color-white);
+  background-color: var(--color-red);
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.button-red:hover {
+  opacity: 90%;
+}
+
 .row {
   display: flex;
   flex-direction: row;

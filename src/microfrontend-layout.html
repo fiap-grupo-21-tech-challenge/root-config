@@ -1,7 +1,7 @@
 <single-spa-router>
   <main>
 
-    <route path="/">
+    <route path="/" exact>
       <application name="@grupo21/navbar"></application>
       <application name="@grupo21/landing-page"></application>
     </route>
@@ -16,9 +16,14 @@
       <application name="@grupo21/sign-up"></application>
     </route>
 
-    <route path="/balance">
+    <route path="/dashboard" exact>
       <application name="@grupo21/navbar"></application>
       <application name="@grupo21/balance"></application>
+    </route>
+
+    <route path="/dashboard/transactions" exact>
+      <application name="@grupo21/navbar"></application>
+      <application name="@grupo21/upload-files"></application>
     </route>
 
     <route path="/upload-files">
